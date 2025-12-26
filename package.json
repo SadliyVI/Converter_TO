@@ -1,0 +1,44 @@
+{
+    "name": "to-converter",
+    "version": "1.0.0",
+    "description": "Конвертер таксационных описаний из PDF в Excel",
+    "author": "ООО \"Геонавигатор\"",
+    "main": "main.js",
+    "type": "module",
+    "scripts": {
+        "start": "electron .",
+        "dist": "electron-builder"
+    },
+    "dependencies": {
+        "exceljs": "^4.4.0",
+        "pdfjs-dist": "^4.7.76"
+    },
+    "devDependencies": {
+        "electron": "^32.0.0",
+        "electron-builder": "^24.13.3"
+    },
+"build": {
+    "appId": "ru.geonavigator.to-converter",
+    "productName": "Конвертер TO",
+    "directories": {
+        "output": "dist"
+    },
+    "files": [
+        "main.js",
+        "preload.cjs",
+        "converter.js",
+        "renderer/**/*",
+        "package.json"
+    ],
+    "win": {
+        "target": [
+            "portable",
+            "nsis"
+        ]
+    },
+    "nsis": {
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true
+    }
+}
+}

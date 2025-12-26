@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Конвертер TO</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <main class="wrap">
+        <h1>Конвертер таксационных описаний из формата pdf в формат Excel</h1>
+
+        <section class="card">
+            <button id="btnPdf" class="btn">Выберите исходный файл</button>
+            <div class="hint" id="pdfHint">Файл не выбран</div>
+
+            <button id="btnDir" class="btn">Выберите папку для записи итогового файла</button>
+            <div class="hint" id="dirHint">Папка не выбрана</div>
+
+            <label class="label" for="outName">Введите название выходного файла</label>
+            <div class="row">
+                <input id="outName" class="input" placeholder="например: ТО_Квартал_4" />
+                <button id="btnConfirm" class="btn secondary">Подтвердить</button>
+            </div>
+            <div class="hint" id="nameHint">Имя не задано</div>
+
+            <button id="btnStart" class="btn primary" disabled>Начать конвертацию</button>
+
+            <div class="progress">
+                <div class="progressText" id="progressText">Ожидание…</div>
+                <progress id="progressBar" value="0" max="100"></progress>
+            </div>
+
+            <label class="check">
+                <input type="checkbox" id="chkVerbose" />
+                Подробный журнал (каждая страница)
+            </label>
+
+            <div class="actions">
+                <button id="btnShowFile" class="btn" disabled>Показать файл в проводнике</button>
+                <button id="btnOpenFolder" class="btn" disabled>Открыть папку</button>
+                <button id="btnOpenFile" class="btn" disabled>Открыть файл</button>
+
+            </div>
+            
+            <div class="logWrap">
+                <div class="logTitle">Журнал</div>
+                <pre id="log" class="log"></pre>
+            </div>
+
+        </section>
+
+        <footer class="footer">© ООО "Геонавигатор", 2025</footer>
+    </main>
+
+    <script src="./renderer.js"></script>
+</body>
+
+</html>
